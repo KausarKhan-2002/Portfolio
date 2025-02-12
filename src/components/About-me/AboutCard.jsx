@@ -26,7 +26,7 @@ const AboutCard = ({ item }) => {
       <h3 className="text-lg sm:text-xl xl:text-2xl font-semibold text-white mb-3 group-hover:text-blue-100">
         {item.question}
       </h3>
-      <p className="hidden sm:text-sm xl:text-base group-hover:block mt-2 text-slate-200 group-hover:text-blue-200 transition">
+      <p className="hidden sm:block sm:text-sm xl:text-base group-hover:block mt-2 text-slate-200 group-hover:text-blue-200 transition">
         {item.answer}
       </p>
     </div>

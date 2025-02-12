@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -24,15 +25,6 @@ const Home = () => {
   });
 
   useGSAP(() => {
-    gsap.from(".home_line", {
-      x: "-300px",
-      delay: 0.4,
-      duration: 1,
-      opacity: 0,
-    });
-  });
-
-  useGSAP(() => {
     gsap.from(".home_img", {
       x: "300px",
       delay: 0.4,
@@ -41,7 +33,36 @@ const Home = () => {
     });
   });
 
+  // Dynamic text state
+  const [roleIndex, setRoleIndex] = useState(0);
+  const roles = [
+    "Kausar khan",
+    "a React Developer",
+    "a MERN Stack Developer",
+    "a UI Designer",
+  ];
 
+  // Change role text every 3 seconds with GSAP animation
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // GSAP animation for sliding out the old role text
+      gsap.to(".dynamic-role", {
+        x: "-100%", // Slide out to the left
+        opacity: 0,
+        duration: 0.5,
+        onComplete: () => {
+          setRoleIndex((prevIndex) => (prevIndex + 1) % roles.length); // Update the role text
+          gsap.fromTo(
+            ".dynamic-role",
+            { x: "100%", opacity: 0 }, // Start from the right
+            { x: "0%", opacity: 1, duration: 0.5 }
+          ); // Slide in the new role text
+        },
+      });
+    }, 2000); // Change every 3 seconds
+
+    return () => clearInterval(interval); // Clear interval on component unmount
+  }, []);
 
   return (
     <section
@@ -61,9 +82,15 @@ const Home = () => {
             <span>Hello</span>
             <img src="/appImg/star.png" className="star w-[100px]" />
           </p>
+
+          {/* Static "I am" text and dynamic role text */}
           <h3 className="banner_title text-[1.5rem] sm:text-[2rem] md:text-[3rem] lg:text-[3.5rem] mt-2">
-            I Am Kausar Khan
+            <span>I am </span>
+            <span className="dynamic-role text-blue-800 font-bold text-5xl">
+              {roles[roleIndex]}
+            </span>
           </h3>
+
           <p className="font-medium text-slate-700 mt-1 text-[.9rem] sm:text-[1rem]">
             I design and build interactive, high-performance, and user-friendly
             web experiences using modern technologies like React, Tailwind CSS,
