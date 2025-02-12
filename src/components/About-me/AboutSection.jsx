@@ -1,5 +1,3 @@
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 import AboutCard from "./AboutCard";
 import { FAQ } from "../../utils/aboutFAQ";
 

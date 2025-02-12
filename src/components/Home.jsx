@@ -49,10 +49,10 @@ const Home = () => {
       className="pt-[100px] lg:pt-0 bg-[url('/sectionBG/home2.svg')] bg-cover  lg:[120vh] lg:h-[100vh] flex justify-center items-center"
     >
       <div className="w-[87%] mx-auto flex flex-col justify-between items-center lg:flex-row lg:justify-between">
-        <div className="hidden">
+        <div className="hidden lg:block">
           <div className="home_line flex flex-col justify-end items-center">
             <div className="w-8 h-8 bg-blue-500 rounded-full" />
-            <div className="w-1 h-60 bg-gradient-to-t from-[#eaf8fd] to-blue-500" />
+            <div className="w-1 h-60 bg-blue-500" />
           </div>
         </div>
 
