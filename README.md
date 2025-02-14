@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio - README</title>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; }
-        h1, h2, h3 { color: #2c3e50; }
-        code { background: #f4f4f4; padding: 3px; border-radius: 5px; }
-    </style>
-</head>
+
 <body>
     <h1>🚀 Personal Portfolio</h1>
     <p>Welcome to my <strong>Personal Portfolio</strong>! This project showcases my skills, experience, and projects in a beautifully designed, fully responsive layout. Built with modern web technologies, it includes smooth animations, dynamic components, and interactive elements for an engaging user experience.</p>
@@ -126,5 +115,3 @@ npm run dev
     <hr>
     <p>⭐ <strong>Show some love by starring this repository!</strong> ⭐</p>
 </body>
-</html>
-
