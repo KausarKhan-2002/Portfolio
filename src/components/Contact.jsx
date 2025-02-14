@@ -2,7 +2,7 @@ import { FaUserAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import useContactForm from "../utils/Hooks/useContactForm"; // Custom hook
 import InputField from "../utils/HOC/InputField";
-import TextareaField from "../utils/HOC/TextAreaField";
+import TextareaField from "../utils/HOC/TextareaField"
 import EyesMove from "../utils/HOC/EyesMove";
 
 const Contact = () => {
