@@ -63,8 +63,6 @@ const Contact = () => {
             value={formData.email}
             placeholder="Enter your email"
             onChange={handleChange}
-            // onFocus={handleFocusEmail}
-            // onBlur={handleBlurEmail}
             className="rounded-xl border border-gray-300 shadow-sm focus:ring-2 focus:ring-blue-400"
           />
           <TextareaField

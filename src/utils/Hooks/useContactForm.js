@@ -11,7 +11,7 @@ const useContactForm = () => {
   const [msg, setMsg] = useState({
     text: "Sending...",
     color: "slate-600",
-    icon: "/message.gif",
+    icon: "/appImg/message.gif",
   });
 
   const messageRef = useRef(null);
@@ -31,16 +31,16 @@ const useContactForm = () => {
     const templateId = "template_mjrgw0k";
     const publicKey = "YzrpwnVbkkn3FAJr0";
 
-    showMessage("Sending...", "slate-600", "/message.gif");
+    showMessage("Sending...", "slate-600", "/appImg/message.gif");
     messageRef.current.style.left = "10px"; // Slide-in effect
 
     emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
       .then(() => {
-        showMessage("Message sent successfully!", "green-700", "/verified.gif");
+        showMessage("Message sent successfully!", "green-700", "/appImg/verified.gif");
         setFormData({ name: "", email: "", message: "" });
       })
       .catch(() => {
-        showMessage("Internal server error!", "red-700", "/error.gif");
+        showMessage("Internal server error!", "red-700", "/appImg/error.gif");
       });
   };
 
