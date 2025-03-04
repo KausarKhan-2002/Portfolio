@@ -22,7 +22,7 @@ const Navbar = ({ isToggle }) => {
   return (
     <div
       id="navbar"
-      className={`${isToggle ? "fixed block" : "hidden"} top-[111px] right-0 sm:visible w-[35%] shadow-lg sm:shadow-none sm:w-auto sm:flex sm:items-center sm:static`}
+      className={`${isToggle ? "fixed block" : "hidden"} top-[111px] right-0 sm:visible w-[35%] shadow-lg sm:shadow-none sm:w-auto sm:flex sm:items-center sm:static bg-white`}
     >
       <div className="sm:hidden p-3">
         <SocialLinks color="text-slate-800" linkGap="gap-3" />
