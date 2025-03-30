@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
+import validator from "validator";
 
 const useContactForm = () => {
   const [formData, setFormData] = useState({
@@ -8,56 +10,67 @@ const useContactForm = () => {
     message: "",
   });
 
-  const [msg, setMsg] = useState({
-    text: "Sending...",
-    color: "slate-600",
-    icon: "/appImg/message.gif",
-  });
-
-  const messageRef = useRef(null);
   const formRef = useRef(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     const { name, email, message } = formData;
 
-    if (!name || !email || !message) return;
+    if (!name) {
+      toast.error("Name is required");
+      return;
+    }
+    if (!email) {
+      toast.error("Email is required");
+      return;
+    }
+    const isEmailValid = validator.isEmail(formData.email);
+    if (!isEmailValid) {
+      toast.error("Email is not valid");
+      return;
+    }
+    if (!message) {
+      toast.error("Message is required");
+      return;
+    }
+
+    const toastId = toast.loading("Sending message...")
 
     const serviceId = "service_7lk5e9a";
     const templateId = "template_mjrgw0k";
     const publicKey = "YzrpwnVbkkn3FAJr0";
 
-    showMessage("Sending...", "slate-600", "/appImg/message.gif");
-    messageRef.current.style.left = "10px"; // Slide-in effect
-
-    emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
+    emailjs
+      .send(
+        serviceId,
+        templateId,
+        {
+          form_name: formData.name,
+          form_email: formData.email,
+          message: formData.message,
+        },
+        publicKey
+      )
       .then(() => {
-        showMessage("Message sent successfully!", "green-700", "/appImg/verified.gif");
+        toast.success("Message sent successfully!");
         setFormData({ name: "", email: "", message: "" });
       })
       .catch(() => {
-        showMessage("Internal server error!", "red-700", "/appImg/error.gif");
-      });
-  };
-
-  const showMessage = (text, color, icon) => {
-    setMsg({ text, color, icon });
-    setTimeout(() => (messageRef.current.style.left = "-200px"), 3000);
-    setTimeout(() => setMsg({ text: "Sending...", color: "slate-600", icon: "/message.gif" }), 4000);
+        toast.error("Internal server error!");
+      })
+      .finally(() => {
+        // Dismiss the loading toast
+        toast.dismiss(toastId);
+      })
   };
 
   return {
     formData,
-    msgText: msg.text,
-    msgColor: msg.color,
-    msgIcon: msg.icon,
     handleChange,
     handleSubmit,
-    messageRef,
     formRef,
   };
 };

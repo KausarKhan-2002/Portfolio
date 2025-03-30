@@ -2,21 +2,11 @@ import { FaUserAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import useContactForm from "../utils/Hooks/useContactForm"; // Custom hook
 import InputField from "../utils/HOC/InputField";
-import TextareaField from "../utils/HOC/TextareaField"
+import TextareaField from "../utils/HOC/TextareaField";
 import EyesMove from "../utils/HOC/EyesMove";
 
 const Contact = () => {
-  const {
-    formData,
-    msgText,
-    msgColor,
-    msgIcon,
-    handleChange,
-    handleSubmit,
-    messageRef,
-    formRef,
-  } = useContactForm();
-
+  const { formData, handleChange, handleSubmit } = useContactForm();
 
   return (
     <section
@@ -33,20 +23,11 @@ const Contact = () => {
         </p>
       </div>
 
-
-      <div
-        ref={messageRef}
-        className={`fixed top-20 left-[-250px] z-50 bg-white py-4 px-6 flex items-center gap-2 rounded-md border-b-4 transition-all duration-500 shadow-lg border-${msgColor}`}
-      >
-        <p className={`text-${msgColor} font-semibold`}>{msgText}</p>
-        <img src={msgIcon} className="w-10 object-contain" alt="status icon" />
-      </div>
-
       <div className="w-full max-w-3xl mx-auto mt-12 bg-slate-100 bg-opacity-80 backdrop-blur-lg shadow-2xl rounded-2xl p-8 relative">
-      {/* Eyes move will move the eyes over the cursor move */}
-      <EyesMove />
-        
-        <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 mt-16">
+        {/* Eyes move will move the eyes over the cursor move */}
+        <EyesMove />
+
+        <div className="space-y-6 mt-16">
           <InputField
             icon={<FaUserAlt className="text-blue-500" />}
             type="text"
@@ -73,12 +54,13 @@ const Contact = () => {
             className="rounded-xl border border-gray-300 shadow-sm focus:ring-2 focus:ring-blue-400"
           />
           <button
+            onClick={handleSubmit}
             type="submit"
             className="w-full py-3 text-lg font-semibold text-white bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl shadow-lg transform transition hover:scale-105 hover:opacity-90"
           >
             Send Message
           </button>
-        </form>
+        </div>
       </div>
     </section>
   );

@@ -5,8 +5,8 @@ import Contact from "./components/Contact";
 import ProjectsContainer from "./components/Projects/ProjectsContainer";
 import Footer from "./components/Footer";
 import Marquee from "./components/Marquee";
+import { Toaster } from "react-hot-toast";
 
-// https://decentraland.org/ => website to clone your portfolio
 // blue => 3B82F6
 // dark bg => 001220
 // footerBg => 594a4a
@@ -14,9 +14,9 @@ import Marquee from "./components/Marquee";
 // about => efe4e4
 
 function App() {
-
   return (
     <>
+      <Toaster />
       <Header />
       <main>
         <Home />
