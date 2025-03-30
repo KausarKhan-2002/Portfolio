@@ -8,7 +8,7 @@
 ---
 
 <h2>🔗 Live Demo</h2>
-<p>Check out my portfolio live: <a href="YOUR_PORTFOLIO_LINK_HERE" target="_blank">Click Here</a></p>
+<p>Check out my portfolio live: <a href="https://portfolio-jsg9.onrender.com/" target="_blank">Click Here</a></p>
 
 <h2>📌 Features</h2>
 <ul>
@@ -55,14 +55,18 @@
 git clone YOUR_GITHUB_REPO_LINK_HERE
 
 # Navigate to the project folder
+
 cd portfolio
 
 # Install dependencies
+
 npm install
 
 # Start the development server
+
 npm run dev
 </code>
+
 </pre>
 
 <h2>📬 Contact Me</h2>
