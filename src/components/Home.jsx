@@ -111,6 +111,7 @@ const Home = () => {
             className="earth w-[300px] sm:w-[350px] md:w-[400px] lg:w-[330px] lg:translate-x-36 xl:w-[370px]"
             src="/appImg/earth.png"
             alt="Earth"
+            loading="lazy"
           />
         </div>
       </div>

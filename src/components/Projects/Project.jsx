@@ -13,6 +13,7 @@ const Project = (props) => {
         <img
           src={banner}
           alt={title}
+          loading="lazy"
           className="w-full h-48 object- rounded-t-3xl brightness-[80%] overflow-hidden"
         />
       </div>
