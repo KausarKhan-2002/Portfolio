@@ -86,7 +86,7 @@ const Home = () => {
           {/* Static "I am" text and dynamic role text */}
           <h3 className="banner_title text-[1.5rem] sm:text-[2rem] md:text-[3rem] lg:text-[3.5rem] mt-2">
             <span>I am </span>
-            <span className="dynamic-role text-blue-800 font-bold text-5xl">
+            <span className="dynamic-role text-blue-800 font-bold text-2xl md:text-3xl lg:text-5xl">
               {roles[roleIndex]}
             </span>
           </h3>
