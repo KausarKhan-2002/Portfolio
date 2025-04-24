@@ -197,7 +197,7 @@ export const hardProjects = [
       "React, Tailwind css, GSAP, node, express, mongoDB, swiggy public API",
     description: "A fully functional food ordering app built in mern stack.",
     banner: "/project-banners/theDigitalDinner.png",
-    link: "https://the-digital-dinner.onrender.com/",
+    link: "https://the-digital-dinner-6ypp.vercel.app",
     repoLink: "https://github.com/KausarKhan-2002/the-digital-dinner",
     completed: true,
   },
