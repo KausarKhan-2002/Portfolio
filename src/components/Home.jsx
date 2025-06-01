@@ -86,7 +86,7 @@ const Home = () => {
           {/* Static "I am" text and dynamic role text */}
           <h3 className="banner_title text-[1.5rem] sm:text-[2rem] md:text-[3rem] lg:text-[3.5rem] mt-2">
             <span>I am </span>
-            <span className="dynamic-role text-blue-800 font-bold text-2xl md:text-3xl lg:text-5xl">
+            <span className="dynamic-role text-slate-700 font-bold text-2xl md:text-3xl lg:text-5xl">
               {roles[roleIndex]}
             </span>
           </h3>
@@ -98,12 +98,14 @@ const Home = () => {
             performance optimization, ensuring that every project delivers a
             seamless user experience.
           </p>
-          <button
-            onClick={() => window.open("/public/pdf/resume.pdf", "_blank")}
-            className="bg-gradient-to-r from-sky-400 to-blue-500 text-white px-6 py-3 rounded-lg shadow-md font-semibold mt-7 hover:scale-105 hover:shadow-lg transition-all duration-300"
+          <a
+            href="https://drive.google.com/file/d/10hoEjuJHPv4Q2PYHyd17RE955rS9m0Im/view?usp=sharing"
+            target="_blank"
+            // onClick={() => window.open("/public/pdf/resume.pdf", "_blank")}
+            className="bg-gradient-to-r from-sky-400 to-blue-500 text-white px-6 py-3 rounded-lg shadow-md font-semibold mt-7 inline-block hover:scale-105 hover:shadow-lg transition-all duration-300"
           >
             Download Resume
-          </button>
+          </a>
         </div>
 
         <div className="home_img">

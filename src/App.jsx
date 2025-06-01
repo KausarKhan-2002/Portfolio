@@ -7,11 +7,7 @@ import Footer from "./components/Footer";
 import Marquee from "./components/Marquee";
 import { Toaster } from "react-hot-toast";
 
-// blue => 3B82F6
-// dark bg => 001220
-// footerBg => 594a4a
-// SideBg => fa523c
-// about => efe4e4
+// Website to choose blob background: https://app.haikei.app/
 
 function App() {
   return (

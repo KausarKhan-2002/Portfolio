@@ -25,15 +25,14 @@ const Marquee = () => {
       className="overflow-x-hidden bg-gradient-to-r from-cyan-500 to-blue-500 py-10"
     >
       <div className="marquee_title w-[89%] py-8 border-t-[1px] border-b-[1px] border-[#b8cdd4]">
-        <h1 className="text-[7.5vw]  text-[#eaf8fd] text-center leading-none ">
-          I'm a Frontend Developer
+        <h1 className="text-[7vw]  text-[#eaf8fd] text-center leading-none ">
+          I'm a MERN Stack developer
         </h1>
         <p className="text-center text-[#eaf8fd9a]">
-          A Frontend Developer crafts seamless, interactive, and visually
-          stunning web experiences using HTML, CSS, JavaScript, and modern
-          frameworks like React. They bridge the gap between design and
-          functionality, ensuring speed, responsiveness, and user engagement
-          across all devices.
+          A Frontend Developer builds responsive, interactive, and visually
+          appealing web interfaces using HTML, CSS, JavaScript, and frameworks
+          like React—turning designs into dynamic user experiences across all
+          devices.
         </p>
       </div>
     </div>
